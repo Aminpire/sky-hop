@@ -1,0 +1,146 @@
+:root {
+  --bg-1: #07111f;
+  --bg-2: #0f1d2e;
+  --panel: rgba(12, 24, 39, 0.8);
+  --panel-border: rgba(147, 197, 253, 0.35);
+  --text: #e2f3ff;
+  --accent: #7dd3fc;
+  --accent-2: #fbbf24;
+  --danger: #f87171;
+  --success: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #122744 0%, var(--bg-1) 30%, var(--bg-2) 100%);
+  color: var(--text);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.game-shell {
+  width: min(96vw, 960px);
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-bottom: none;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
+}
+
+.brand {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(180deg, #102744 0%, #0b1d31 25%, #0d2740 45%, #163a54 100%);
+  border: 1px solid var(--panel-border);
+  border-top: none;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 15px 35px rgba(8, 15, 27, 0.55);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(5, 10, 16, 0.45);
+  border-radius: 18px;
+}
+
+.overlay.visible {
+  display: grid;
+}
+
+.panel {
+  width: min(480px, 85%);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.panel h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.panel p {
+  margin: 0;
+  color: #dbeafe;
+  line-height: 1.5;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1.25rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  background: linear-gradient(135deg, var(--accent), #38bdf8);
+  color: #04111e;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.45);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .hud {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .scoreboard {
+    gap: 0.75rem;
+    font-size: 0.8rem;
+  }
+}

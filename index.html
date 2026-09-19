@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Hop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hud">
+        <div class="brand">Sky Hop</div>
+        <div class="scoreboard">
+          <span>Score: <strong id="score">0</strong></span>
+          <span>Best: <strong id="best-score">0</strong></span>
+        </div>
+      </header>
+
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Sky Hop game"></canvas>
+
+      <div id="overlay" class="overlay visible" aria-live="polite">
+        <div class="panel">
+          <h1>Sky Hop</h1>
+          <p>Jump over the floating obstacles and survive as long as you can.</p>
+          <div class="controls">
+            <span>Jump: Space / ↑</span>
+            <span>Restart: Enter</span>
+          </div>
+          <button id="startButton" type="button">Start Game</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
